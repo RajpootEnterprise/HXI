@@ -1,0 +1,53 @@
+# ===== Node (React, Public Website, Admin Panel) =====
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# ===== Flutter =====
+pubspec.lock
+.dart_tool/
+.build/
+.ios/
+.android/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# ===== Java - Spring Boot =====
+target/
+*.jar
+*.war
+*.iml
+
+# ===== Python AI =====
+__pycache__/
+venv/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.pickle
+*.pkl
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+out/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+logs/
+*.log
+*.tmp
+
+# ===== Other =====
+.env*

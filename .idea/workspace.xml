@@ -4,7 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ef339b5-1bb3-40dc-ac9f-2e35e637f193" name="Changes" comment="" />
+    <list default="true" id="8ef339b5-1bb3-40dc-ac9f-2e35e637f193" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/emotion-model/model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build-all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/emotion-model/preprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/emotion-model/train.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/model-training/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run-all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/model-training/data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ai/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/model-training/notebooks/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run-kafka.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/prediction-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/stop-all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/prediction-service/app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/prediction-service/models/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/prediction-service/routes/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/prediction-service/utils/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/predictions-api/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/predictions-api/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ai/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/predictions-api/routers/dropoff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai/predictions-api/routers/emotion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/auth-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/src/main/java/com/hxi/latency_monitor_service/LatencyMonitorServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/latency-monitor-service/src/test/java/com/hxi/latency_monitor_service/LatencyMonitorServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/hxi/user_service/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/test/java/com/hxi/user_service/UserServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/src/main/java/com/hxi/ux_friction_service/UxFrictionServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/ux-friction-service/src/test/java/com/hxi/ux_friction_service/UxFrictionServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devops/kubernetes/api-gateway.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devops/kubernetes/event-intake.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devops/kubernetes/kafka.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devops/kubernetes/zookeeper.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/api/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/charts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/components/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/contexts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/heatmap-viewer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/hooks/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/pages/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/session-replay-viewer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react-dashboard/store/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/website-bootstrap/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfile.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,16 +94,18 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/major_project/HXI",
-    "settings.editor.selected.configurable": "settings.sync"
+    "settings.editor.selected.configurable": "settings.sync",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1eb26e45-fafc-4374-945e-7620c2fff505" name="Changes" comment="" />
+      <changelist id="8ef339b5-1bb3-40dc-ac9f-2e35e637f193" name="Changes" comment="" />
       <created>1764870348037</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
