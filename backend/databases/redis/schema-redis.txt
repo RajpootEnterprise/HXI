@@ -1,0 +1,42 @@
+# Redis Schema for HXI Platform
+
+# 1. Session cache (fast lookup)
+session:<session_id> = {
+    user_id,
+    start_time,
+    device
+}
+
+# 2. Active users (sorted set by last activity)
+active_users = ZSET
+  key: user:<id>
+  score: timestamp
+
+# 3. Real-time event stream buffer
+events_stream = STREAM
+  fields: session_id, event_type, x, y, timestamp
+
+# 4. Rage click counters
+rage:<session_id>:<element_id> = INT COUNTER
+
+# 5. Real-time heatmap aggregator
+heatmap:<screen_name> = HASH
+  x_y => count
+
+# 6. API latency live metrics
+latency:<endpoint> = LIST (latest 100 entries)
+
+# 7. Experience score caching
+exp_score:<session_id> = INT
+
+# TTL Policies
+SET session:<id> EX 3600
+SET exp_score:<id> EX 1800
+
+# Redis will be mainly used for:
+- Real-time heatmaps
+- Real-time rage click counters
+- Experience score instant access
+- Session cache
+- Live latency graphs
+- Event streaming
