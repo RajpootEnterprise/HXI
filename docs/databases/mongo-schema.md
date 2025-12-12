@@ -1,38 +1,35 @@
 
-# MongoDB Schema — HXI Platform
-Database: **hxi_raw**
+# MongoDB Schema
 
-MongoDB stores raw, high-volume, unstructured, real-time event data.
-
-This is the primary data lake for the analytics pipeline.
-
----
-
-# 📘 COLLECTIONS OVERVIEW
+# 📘 COLLECTIONS
 
 | Collection | Purpose |
 |-----------|---------|
-| events | Raw SDK UI events |
-| sessions | Raw session-level info |
-| replay_chunks | Replay frames |
-| emotion_predictions | Raw AI classifications |
-| latency_metrics | API performance logs |
-| journey_steps | Navigation data |
-| rage_clicks | Rage click detection |
+| events | Raw UI events from SDK |
+| sessions | Raw session start/stop and metadata |
+| replay_chunks | Raw replay event frames |
+| emotion_predictions | Raw emotion classification |
+| latency_metrics | Raw latency data |
+| journey_steps | Screen transitions |
+| rage_clicks | Unprocessed rage-click signals |
 
 ---
 
-# 🟩 events
+# 🟩 `events`
 ```json
 {
   "sessionId": "uuid",
-  "eventType": "click",
+  "type": "click",
   "screen": "Home",
   "elementId": "btn-login",
   "x": 120,
-  "y": 450,
-  "timestamp": "2025-01-15T10:15:20Z",
-  "metadata": { "color": "red" }
+  "y": 430,
+  "scroll": 200,
+  "timestamp": ISODate(),
+  "metadata": {
+    "color": "red",
+    "target": "button"
+  }
 }
 ````
 
@@ -40,33 +37,35 @@ Indexes:
 
 ```js
 db.events.createIndex({ sessionId: 1 });
-db.events.createIndex({ eventType: 1 });
+db.events.createIndex({ type: 1 });
+db.events.createIndex({ screen: 1 });
 ```
 
 ---
 
-# 🟩 sessions
+# 🟩 `sessions`
 
 ```json
 {
   "sessionId": "uuid",
   "userId": "uuid",
-  "ip": "192.168.1.10",
   "device": "Android",
-  "startTime": ISODate()
+  "ip": "192.168.1.10",
+  "startedAt": ISODate(),
+  "userAgent": "Mozilla"
 }
 ```
 
 ---
 
-# 🟩 replay_chunks
+# 🟩 `replay_chunks`
 
 ```json
 {
   "sessionId": "uuid",
   "chunkIndex": 0,
-  "data": {},
-  "recordedAt": ISODate()
+  "data": { /* raw replay frame */ },
+  "timestamp": ISODate()
 }
 ```
 
@@ -78,21 +77,21 @@ db.replay_chunks.createIndex({ sessionId: 1, chunkIndex: 1 });
 
 ---
 
-# 🟩 emotion_predictions
+# 🟩 `emotion_predictions`
 
 ```json
 {
   "sessionId": "uuid",
-  "eventId": "xyz123",
-  "predictedEmotion": "frustrated",
-  "confidence": 0.81,
+  "eventId": "xyz",
+  "emotion": "frustrated",
+  "confidence": 0.82,
   "timestamp": ISODate()
 }
 ```
 
 ---
 
-# 🟩 latency_metrics
+# 🟩 `latency_metrics`
 
 ```json
 {
@@ -106,12 +105,12 @@ db.replay_chunks.createIndex({ sessionId: 1, chunkIndex: 1 });
 
 ---
 
-# 🟩 journey_steps
+# 🟩 `journey_steps`
 
 ```json
 {
   "sessionId": "uuid",
-  "stepNumber": 3,
+  "step": 3,
   "screen": "Checkout",
   "timestamp": ISODate()
 }
@@ -119,13 +118,13 @@ db.replay_chunks.createIndex({ sessionId: 1, chunkIndex: 1 });
 
 ---
 
-# 🟩 rage_clicks
+# 🟩 `rage_clicks`
 
 ```json
 {
   "sessionId": "uuid",
   "elementId": "btn-pay",
-  "clicks": 8,
+  "clickCount": 8,
   "timestamp": ISODate()
 }
 ```

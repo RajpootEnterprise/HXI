@@ -1,63 +1,70 @@
-# Redis Schema — HXI Platform
-Redis is used for real-time analytics, caching, live metrics, counters, and streams.
+# Redis Schema
 
-Redis DB: **0 (default)**
+```md
+
+Redis DB: **0 (default)**  
+Used for: real-time counters, heatmaps, temporary buffers, latency pipelines, streams.
 
 ---
 
 # 📘 REDIS KEYS OVERVIEW
 
-| Key Pattern | Type | Purpose |
-|-------------|-------|---------|
-| session:<id> | HASH | Active session cache |
-| active_users | ZSET | Track online users |
-| events_stream | STREAM | Live events feed |
-| rage:<session>:<element> | COUNTER | Rage click detection |
-| heatmap:<screen> | HASH | Live heatmap |
-| latency:<api> | LIST | Store last 100 latency reads |
-| exp_score:<session> | STRING | Cached UX score |
-| replay_queue | LIST | Replay processing |
+| Key Pattern | Type | TTL | Purpose |
+|-------------|------|-----|---------|
+| session:<sid> | HASH | 1 hour | Temporary session state |
+| session:live:<sid> | STREAM | 24 hours | Live raw events stream |
+| active_users | ZSET | none | Track online users by last ping |
+| rage:<sid>:<element> | COUNTER | 5 min | Click burst detection |
+| heatmap:<screen> | HASH | none | Live heatmap for UI |
+| latency:<api> | LIST | 7 days | Rolling latency logs |
+| exp_score:<sid> | STRING | 30 min | Cached UX score |
+| replay_queue | LIST | none | Queue of replay chunks |
 
 ---
 
-# 🟥 session:<session_id>
-````
+# 🟥 `session:<sid>` (HASH)
+Stores temporary session data before moving to DB.
 
-HSET session:12345 user_id 777 device "Android" start_time "10:22"
+```
+
+HSET session:12345 user "[abc@xyz.com](mailto:abc@xyz.com)" device "Android" startedAt "169999"
 EXPIRE session:12345 3600
 
 ```
 
 ---
 
-# 🟥 active_users (sorted set)
-```
-
-ZADD active_users 1700000000 user123
+# 🟥 `session:live:<sid>` (STREAM)
+Live firehose for real-time dashboards.
 
 ```
 
----
-
-# 🟥 events_stream (Redis STREAM)
-```
-
-XADD events_stream * sessionId 123 type click x 190 y 250
+XADD session:live:12345 * type click x 190 y 240 ts 169999
 
 ```
 
 ---
 
-# 🟥 rage:<session>:<element>
+# 🟥 `active_users` (ZSET)
 ```
 
-INCR rage:session123:btn-login
+ZADD active_users 1700000000 "user123"
 
 ```
 
 ---
 
-# 🟥 heatmap:<screen>
+# 🟥 `rage:<sid>:<element>` (COUNTER)
+```
+
+INCR rage:12345:btn-login
+EXPIRE rage:12345:btn-login 300
+
+```
+
+---
+
+# 🟥 `heatmap:<screen>` (HASH)
 ```
 
 HINCRBY heatmap:Home "120_330" 1
@@ -66,7 +73,7 @@ HINCRBY heatmap:Home "120_330" 1
 
 ---
 
-# 🟥 latency:<api>
+# 🟥 `latency:<api>` (Rolling LIST)
 ```
 
 LPUSH latency:/api/login 320
@@ -76,10 +83,7 @@ LTRIM latency:/api/login 0 100
 
 ---
 
-# 🟥 exp_score:<session>
+# 🟥 `exp_score:<sid>`
 ```
 
-SET exp_score:session123 78 EX 1800
-
-```
-
+SET exp_score:12345 78 EX 1800
