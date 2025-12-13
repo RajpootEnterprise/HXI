@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef339b5-1bb3-40dc-ac9f-2e35e637f193" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/databases/kafka-topics.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/databases/mongo-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/databases/mongo-schema.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/databases/postgres-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/databases/postgres-schema.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/databases/redis-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/databases/redis-schema.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
