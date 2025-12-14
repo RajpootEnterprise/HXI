@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hxi_events_db
+
+  kafka:
+    bootstrap-servers: localhost:9092

@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo-prod:27017/hxi_events_db
+
+  kafka:
+    bootstrap-servers: kafka-prod:9092
