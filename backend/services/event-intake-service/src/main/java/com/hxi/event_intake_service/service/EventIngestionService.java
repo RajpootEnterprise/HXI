@@ -1,5 +1,13 @@
 package com.hxi.event_intake_service.service;
 
+import com.hxi.event_intake_service.dto.EventRequest;
+import com.hxi.event_intake_service.kafka.EventProducer;
+import com.hxi.event_intake_service.model.EventDocument;
+import com.hxi.event_intake_service.repository.EventRepository;
+import org.springframework.stereotype.Service;
+
+import java.time.Instant;
+
 @Service
 public class EventIngestionService {
 
