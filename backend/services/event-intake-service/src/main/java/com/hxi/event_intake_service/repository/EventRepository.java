@@ -1,4 +1,5 @@
 package com.hxi.event_intake_service.repository;
 
-public class EventRepository {
+public interface EventRepository
+        extends MongoRepository<EventDocument, String> {
 }

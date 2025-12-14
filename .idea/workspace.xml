@@ -6,12 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="8ef339b5-1bb3-40dc-ac9f-2e35e637f193" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/databases/postgres-schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/databases/postgres-schema.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/dto/EventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/dto/EventRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/kafka/EventProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/kafka/EventProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/model/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/model/EventDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/service/EventIngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/java/com/hxi/event_intake_service/service/EventIngestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/event-intake-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
