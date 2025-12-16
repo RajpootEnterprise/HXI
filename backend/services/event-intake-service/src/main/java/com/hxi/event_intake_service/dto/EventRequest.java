@@ -12,7 +12,6 @@ import java.util.Map;
 @Setter
 public class EventRequest {
 
-    @NotBlank
     private String eventId;
 
     @NotBlank
@@ -21,11 +20,11 @@ public class EventRequest {
     @NotBlank
     private String userId;
 
-    @NotBlank
-    private String page;
-
     @NotNull
     private EventType eventType;
+
+    @NotBlank
+    private String page;
 
     private Map<String, Object> metadata;
 }

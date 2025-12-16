@@ -15,15 +15,18 @@ import java.util.Map;
 public class EventDocument {
 
     @Id
-    private String id; // Mongo _id
+    private String id;
 
     @Indexed(unique = true)
-    private String eventId;   // <-- THIS FIELD MUST EXIST
+    private String eventId;
 
     private String sessionId;
     private String userId;
+
+    // 🔥 MUST BE ENUM — NOT STRING
+    private EventType eventType;
+
     private String page;
-    private String eventType;
     private Map<String, Object> metadata;
     private Instant timestamp;
 }
