@@ -1,0 +1,2 @@
+com.hxi.kafka_common.KafkaCommonAutoConfiguration
+com.hxi.kafka_common.config.KafkaAutoConfiguration

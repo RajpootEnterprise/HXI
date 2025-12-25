@@ -1,8 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://admin:admin@localhost:27017/hxi
-
-kafka:
-  topic:
-    event-ingestion: hxi.events.ingestion
