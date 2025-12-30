@@ -1,26 +1,21 @@
 package com.hxi.event_intake_service.controller;
 
-import com.hxi.event_intake_service.dto.EventRequest;
-import com.hxi.event_intake_service.service.EventIngestionService;
-import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
+import com.hxi.event_intake_service.kafka.EventProducer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/events")
 public class EventController {
 
-    private final EventIngestionService ingestionService;
+    private final EventProducer producer;
 
-    public EventController(EventIngestionService ingestionService) {
-        this.ingestionService = ingestionService;
+    public EventController(EventProducer producer) {
+        this.producer = producer;
     }
 
     @PostMapping
-    public ResponseEntity<String> ingestEvent(
-            @Valid @RequestBody EventRequest request
-    ) {
-        ingestionService.ingest(request);
-        return ResponseEntity.ok("Event ingested successfully");
+    public String send(@RequestBody String event) {
+        producer.publish("hxi-events", event);
+        return "Event sent to Kafka";
     }
 }

@@ -10,8 +10,6 @@ spring:
       uri: mongodb://admin:admin123@localhost:27017/hxi_events_db?authSource=admin
 
   kafka:
-    bootstrap-servers: localhost:9092
-
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
