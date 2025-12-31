@@ -1,21 +1,27 @@
 package com.hxi.event_intake_service.controller;
 
-import com.hxi.event_intake_service.kafka.EventProducer;
-import org.springframework.web.bind.annotation.*;
+import com.hxi.event_intake_service.service.EventService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/events")
 public class EventController {
 
-    private final EventProducer producer;
+    private final EventService eventService;
 
-    public EventController(EventProducer producer) {
-        this.producer = producer;
+    public EventController(EventService eventService) {
+        this.eventService = eventService;
     }
 
     @PostMapping
-    public String send(@RequestBody String event) {
-        producer.publish("hxi-events", event);
-        return "Event sent to Kafka";
+    public ResponseEntity<String> publishEvent(@RequestBody Map<String, Object> payload) {
+        eventService.processEvent(payload);
+        return ResponseEntity.ok("Event received and processed");
     }
 }
