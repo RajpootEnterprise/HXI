@@ -1,5 +1,8 @@
 package com.hxi.rageclick_service.consumer;
 
+import com.hxi.rageclick_service.model.RawEvent;
+import com.hxi.rageclick_service.service.RageClickDetectionService;
+
 @Component
 public class RawEventConsumer {
 
