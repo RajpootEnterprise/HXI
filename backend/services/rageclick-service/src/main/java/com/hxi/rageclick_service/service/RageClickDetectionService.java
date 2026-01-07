@@ -1,5 +1,15 @@
 package com.hxi.rageclick_service.service;
 
+import com.hxi.rageclick_service.model.RageClickEvent;
+import com.hxi.rageclick_service.model.RawEvent;
+import com.hxi.rageclick_service.repository.RageClickRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 @Service
 public class RageClickDetectionService {
 

@@ -1,5 +1,10 @@
 package com.hxi.rageclick_service.model;
 
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
 @Document(collection = "rage_clicks")
 public class RageClickEvent {
 
