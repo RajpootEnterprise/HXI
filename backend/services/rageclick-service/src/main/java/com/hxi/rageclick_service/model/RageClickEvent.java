@@ -9,16 +9,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class RageClickEvent {
 
     @Id
-    private Integer id;
+    private String id;
 
     private String sessionId;
     private String userId;
     private String screen;
     private String elementId;
 
-    private Integer clickCount;
-    private Long timeWindowMs;
+    private int clickCount;
+    private long timeWindowMs;
 
     private String severity; // LOW, MEDIUM, HIGH
-    private Long detectedAt;
+    private long detectedAt;
 }
