@@ -13,7 +13,7 @@ import java.util.Map;
 public class RawEvent {
 
     @Id
-    private String id;
+    private Integer id;
 
     private String sessionId;
     private String userId;
@@ -23,6 +23,6 @@ public class RawEvent {
 
     private Map<String, Object> metadata;
 
-    private long timestamp;
+    private Long timestamp;
 }
 
